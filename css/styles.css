@@ -4233,13 +4233,14 @@ img.u-pull-left {
     /* overflow: hidden; */
 
     .slider {
-        animation: slidein 30s linear infinite;
+        animation: slidein 10s linear infinite;
         white-space: nowrap;
 
         .logos {
             width: 100%;
             display: inline-block;
             margin: 0px 0;
+            margin-left: -60px;
 
             .fab {
                 width: calc(100% / 5);
@@ -4251,11 +4252,11 @@ img.u-pull-left {
 
 @keyframes slidein {
     from {
-        transform: translate3d(0, 0, 0);
+        transform: translate3d(-20%, 0, 0);
     }
 
     to {
-        transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-190%, 0, 0);
     }
 }
 
@@ -4276,3 +4277,8 @@ img.u-pull-left {
 /* .logos{
     padding: 10px;
 } */
+
+/* brand-logo */
+.brand-logo{
+    border-radius: 100px;
+}
