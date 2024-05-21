@@ -4169,8 +4169,10 @@ img.u-pull-left {
     transition: opacity 500ms;
     visibility: hidden;
     opacity: 0;
-  }
-  .overlay:target {
+    backdrop-filter: blur(5px);
+}
+
+.overlay:target {
     visibility: visible;
     opacity: 1;
     display: flex;
@@ -4179,9 +4181,9 @@ img.u-pull-left {
     align-items: center;
     justify-content: space-around;
     z-index: 100;
-  }
-  
-  .popup {
+}
+
+.popup {
     margin: 70px auto;
     padding: 20px;
     background: #fff;
@@ -4189,14 +4191,15 @@ img.u-pull-left {
     /* width: 30%; */
     position: relative;
     transition: all 5s ease-in-out;
-  }
-  
-  .popup h2 {
+}
+
+.popup h2 {
     margin-top: 0;
     color: #333;
     font-family: Tahoma, Arial, sans-serif;
-  }
-  .popup .close {
+}
+
+.popup .close {
     position: absolute;
     top: 20px;
     right: 30px;
@@ -4205,20 +4208,71 @@ img.u-pull-left {
     font-weight: bold;
     text-decoration: none;
     color: #333;
-  }
-  .popup .close:hover {
+}
+
+.popup .close:hover {
     color: #06D85F;
-  }
-  .popup .content {
+}
+
+.popup .content {
     max-height: 30%;
     overflow: auto;
-  }
-  
-  @media screen and (max-width: 700px){
-    .box{
-      width: 70%;
+}
+
+@media screen and (max-width: 700px) {
+    .box {
+        width: 70%;
     }
-    .popup{
-      width: 70%;
+
+    .popup {
+        width: 70%;
     }
-  }
+}
+
+.container {
+    /* overflow: hidden; */
+
+    .slider {
+        animation: slidein 30s linear infinite;
+        white-space: nowrap;
+
+        .logos {
+            width: 100%;
+            display: inline-block;
+            margin: 0px 0;
+
+            .fab {
+                width: calc(100% / 5);
+                animation: fade-in 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
+            }
+        }
+    }
+}
+
+@keyframes slidein {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.logos img{
+    width: 140px;
+    padding: 20px;
+}
+/* .logos{
+    padding: 10px;
+} */
